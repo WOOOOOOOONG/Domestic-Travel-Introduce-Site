@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    body {
+        background: white;
+        display: table;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1000px;
+        height: 100%;
+    }
+
+   .outer {
+      width:450px;
+      height:550px;
+      background:white;
+      color:black;
+      margin-left:auto;
+      margin-right:auto;
+      margin-top:150px;
+      border: 1px solid black;
+   }
+
+   #joinForm {
+       height:65%;
+       box-sizing: border-box;
+   }
+   
+   #joinForm td {
+      /* text-align:center; */
+      font-size:18px;
+      font-weight: bolder;
+   }
+   
+   input {
+      margin-top:2px;
+   }
+   
+   button {
+      height:22px;
+      width:100px;
+      background:darkgray;
+      border:darkgray;
+      color:white;
+      border-radius:5px;
+   }
+   
+   button:hover {
+      cursor:pointer;
+      background:salmon;
+   }
+   
+   #idCheck, #pwdResult {
+       margin:auto;
+   }
+   
+   #pwdResult {
+      text-align:left;
+   }
+   #logo{
+       margin-left: auto;
+       margin-right: auto;
+   }
+
+   .mimg {
+        margin-left:auto;
+        margin-right:auto;
+        width:150px;
+        height:15%;
+        box-sizing: border-box;
+            
+    }
+
+    .mimg img {
+        width: 150px;
+        height:100%;
+        border-radius: 50%;
+    }
+
+    tr {
+        height:px;
+        padding:0;
+    }
+
+    #jo {
+        width:79px;
+    }
+
+    #email {
+        width:88px;
+    }
+
+    table {
+        margin-left:30px;
+        width:100%;
+        height:70%;
+    }
+
+    .btns {
+        width:100%;
+        height:30%;
+
+    }
+    .btns button{
+        background:skyblue;
+        width:50%;
+        height:50%;
+        float: left;
+        border-radius:0px;
+        box-sizing: border-box;
+    }
+
+    .btns button:hover{
+        background:salmon;
+    }
+
+    .btns div {
+        box-sizing: border-box;
+    }
+
+    td {
+
+        padding:0;
+    }
+
+    .cen {
+        width:100%;
+        height:20%;
+        box-sizing: border-box;
+    }
+
+    h2 {
+        margin:0;
+    }
+
+    .cen h2, .cen button {
+        box-sizing: border-box;
+    }
+
+
+</style>
+</head>
+<body>
+   <!-- 페이지를 이동해도 menubar는 계속 상단에 노출되도록 하자 -->
+   
+   <!-- 1. 회원 가입 -->
+   <!-- 1_1. 회원가입 폼 작성 -->
+   <div class="outer">
+        <div class="mimg">
+            <img id="logo" src="img/로고.png" width="100px">
+        </div>
+        <div class="cen">
+            <h2 align="center">아이디 / 비밀번호 찾기</h2><br><br>
+            <button style="margin-left:30px; float:left; height:36px;">아이디 찾기</button><button style="margin-left:5px; height:36px; float: left;">비밀번호 찾기</button>
+        </div>
+      <form id="joinForm" name="joinForm" action="<%= request.getContextPath() %>/insert.me" method="post" onsubmit="return joinValidate();">
+         <table>
+            <tr>
+               <td>이름을 입력하세요.</td>
+               <!-- <td>아이디를 입력하세요.</td> -->
+            </tr>
+            <tr>
+               <td><input type="text" maxlength="5" name="userName" required><br><br><br></td>
+            </tr>
+            <tr>
+                <td>회원 가입시 입력한 <br> 이메일을 입력하시오.</td>
+            </tr>
+            <tr>
+                <td style="font-weight:100; font-size:15px;"><input type="text" name="email" id="email">@<input type="text" name="email" id="email">
+                <select id="email">
+                    <option value="naver.com">naver.com</option>
+                    <option value="daum.net">daum.net</option>
+                    <option value="hanmail.net">hanmail.net</option>
+                    <option value="google.com">google.com</option>
+                </select>
+            </td>
+            <td width="150px"><button id="idCheck" type="button" style="margin-left:10px;" onclick="checkId()">이메일 인증</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" > <button type="button">인증하기</button></td>
+            </tr>
+         </table>
+         <div class="btns" align="center">
+            <div style="height:50%"></div>
+            <button id="toMain" onclick="returnToMain()" type="button">CANCEL</button>
+            <button id="joinBtn">SUBMIT</button>
+         </div>
+      </form>
+   </div>
+   
+   
+   <script>
+      
+      // 1. 메인으로 돌아가기
+      function returnToMain(){
+         location.href="<%= request.getContextPath() %>";
+      }
+   
+      // 2. 유효성 검사
+      function joinValidate(){
+         if(!(/^[a-z][a-z\d]{3,11}$/.test($("#joinForm input[name=userId]").val()))){
+            alert('아이디는 영소문자로 시작해서 4~12자 입력(숫자 포함 가능)');
+            $("#joinForm input[name=userId]").select();
+            return false;
+         }
+         
+         if($("#joinForm input[name=userPwd]").val() != $("#joinForm input[name=userPwd2]").val()){
+            $("#pwdResult").text("비밀번호 불일치").css("color","red");
+            return false;
+         }
+         
+         if(!(/^[가-힣]{2,}$/.test($("#joinForm input[name=userName]").val()))){
+            alert('이름은 한글로 2글자 이상 입력');
+            $("#joinForm input[name=userName]").select();
+            return false;
+         }
+         
+         return true;
+         
+      }
+   
+      // 3. 회원 가입
+      // InsertMemberServlet 만들어서 진행
+      
+      // 4. 아이디 중복체크
+      function checkId(){
+         window.open("idCheckForm.jsp", "checkForm", "width=300, height=200");
+      }
+   
+   </script>
+   
+</body>
+</html>

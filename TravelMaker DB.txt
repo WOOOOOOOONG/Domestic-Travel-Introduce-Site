@@ -1,0 +1,668 @@
+--------------------------------------------------------
+--  파일이 생성됨 - 금요일-12월-27-2019   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Sequence SEQ_B_ID
+--------------------------------------------------------
+
+   CREATE SEQUENCE  SEQ_B_ID  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 61 CACHE 20 NOORDER  NOCYCLE;
+--------------------------------------------------------
+--  DDL for Sequence SEQ_M_ID
+--------------------------------------------------------
+
+   CREATE SEQUENCE  SEQ_M_ID  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 81 CACHE 20 NOORDER  NOCYCLE;
+--------------------------------------------------------
+--  DDL for Sequence SEQ_MFILE_NO
+--------------------------------------------------------
+
+   CREATE SEQUENCE  SEQ_MFILE_NO  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 81 CACHE 20 NOORDER  NOCYCLE;
+--------------------------------------------------------
+--  DDL for Sequence SEQ_P_ID
+--------------------------------------------------------
+
+   CREATE SEQUENCE  SEQ_P_ID  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE;
+--------------------------------------------------------
+--  DDL for Sequence SEQ_QA_ID
+--------------------------------------------------------
+
+   CREATE SEQUENCE  SEQ_QA_ID  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 101 CACHE 20 NOORDER  NOCYCLE;
+--------------------------------------------------------
+--  DDL for Sequence SEQ_R_ID
+--------------------------------------------------------
+
+   CREATE SEQUENCE  SEQ_R_ID  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 121 CACHE 20 NOORDER  NOCYCLE;
+--------------------------------------------------------
+--  DDL for Sequence SEQ_REPLY_ID
+--------------------------------------------------------
+
+   CREATE SEQUENCE  SEQ_REPLY_ID  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE;
+--------------------------------------------------------
+--  DDL for Sequence SEQ_RFILE_NO
+--------------------------------------------------------
+
+   CREATE SEQUENCE  SEQ_RFILE_NO  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 161 CACHE 20 NOORDER  NOCYCLE;
+--------------------------------------------------------
+--  DDL for Sequence SEQ_RSY_ID
+--------------------------------------------------------
+
+   CREATE SEQUENCE  SEQ_RSY_ID  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE;
+--------------------------------------------------------
+--  DDL for Sequence SEQ_S_ID
+--------------------------------------------------------
+
+   CREATE SEQUENCE  SEQ_S_ID  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE;
+--------------------------------------------------------
+--  DDL for Table BOARDTYPE
+--------------------------------------------------------
+
+  CREATE TABLE BOARDTYPE (B_TYPE NUMBER, TYPE_NAME VARCHAR2(20));
+--------------------------------------------------------
+--  DDL for Table INFORMATION
+--------------------------------------------------------
+
+  CREATE TABLE INFORMATION (B_ID NUMBER, SDAY DATE, EDAY DATE, TEL VARCHAR2(20), PRICE NUMBER, ADDRESS VARCHAR2(100), PAGEADDRESS VARCHAR2(50));
+--------------------------------------------------------
+--  DDL for Table BFILESAVE
+--------------------------------------------------------
+
+  CREATE TABLE BFILESAVE (NO NUMBER, B_ID NUMBER, ORIGINNAME VARCHAR2(100), NEWFILENAME VARCHAR2(100), FILEPATH VARCHAR2(300), UPDATE_DATE DATE, STATUS VARCHAR2(2) DEFAULT 'Y', WRITE_DATE DATE DEFAULT SYSDATE, FILE_LEVEL NUMBER);
+--------------------------------------------------------
+--  DDL for Table BOARD
+--------------------------------------------------------
+
+  CREATE TABLE BOARD (B_ID NUMBER, WRITE_DATE DATE DEFAULT SYSDATE, UPDATE_DATE DATE, TITLE VARCHAR2(50), CONTENT LONG, VIEW_CNT NUMBER DEFAULT 0, GOOD NUMBER DEFAULT 0, NOTGOOD NUMBER DEFAULT 0, WRITER VARCHAR2(20), STATUS VARCHAR2(5) DEFAULT 'Y', L_CODE NUMBER, S_TYPE NUMBER, B_TYPE NUMBER, M_SEQ NUMBER);
+--------------------------------------------------------
+--  DDL for Table QA
+--------------------------------------------------------
+
+  CREATE TABLE QA (QA_ID NUMBER, QA_TITLE VARCHAR2(50), QA_CONTENT VARCHAR2(1000), QA_STATUS VARCHAR2(15) DEFAULT '미답변', ENROLL_DATE DATE DEFAULT SYSDATE, ANSWER VARCHAR2(1000), AN_DATE DATE DEFAULT SYSDATE, M_SEQ NUMBER, QA_TYPE NUMBER);
+--------------------------------------------------------
+--  DDL for Table LOCATION
+--------------------------------------------------------
+
+  CREATE TABLE LOCATION (L_CODE NUMBER, L_NAME VARCHAR2(20));
+--------------------------------------------------------
+--  DDL for Table MEMBER
+--------------------------------------------------------
+
+  CREATE TABLE MEMBER (M_SEQ NUMBER, M_ID VARCHAR2(20), PASS VARCHAR2(20), M_NAME VARCHAR2(20), PHONE VARCHAR2(20), M_NO VARCHAR2(20), EMAIL VARCHAR2(30), JOIN_DATE DATE DEFAULT SYSDATE, ACCESS_DATE DATE, NICKNAME VARCHAR2(15), B_ID_ARRAY VARCHAR2(200), REPORT NUMBER, STATUS VARCHAR2(10), PROFILE VARCHAR2(300) DEFAULT 'smile.jpg');
+--------------------------------------------------------
+--  DDL for Table MYPLAN
+--------------------------------------------------------
+
+  CREATE TABLE MYPLAN (P_SEQ NUMBER, M_SEQ NUMBER, P_NAME VARCHAR2(50), START_DATE DATE, END_DATE DATE, START_TIME VARCHAR2(10), END_TIME VARCHAR2(10), FILENAME VARCHAR2(300), URL VARCHAR2(300));
+--------------------------------------------------------
+--  DDL for Table QATYPE
+--------------------------------------------------------
+
+  CREATE TABLE QATYPE (QA_TYPE NUMBER, QA_TYPE_NAME VARCHAR2(20));
+--------------------------------------------------------
+--  DDL for Table REPLY
+--------------------------------------------------------
+
+  CREATE TABLE REPLY (R_ID NUMBER, R_CONTENT VARCHAR2(300), WRITE_DATE DATE DEFAULT SYSDATE, B_ID NUMBER, M_SEQ NUMBER, STATUS VARCHAR2(1));
+--------------------------------------------------------
+--  DDL for Table RESERVATION
+--------------------------------------------------------
+
+  CREATE TABLE RESERVATION (RSV_ID NUMBER, M_SEQ NUMBER, CHECKIN DATE, CHECKOUT DATE, R_ID NUMBER);
+--------------------------------------------------------
+--  DDL for Table RFILESAVE
+--------------------------------------------------------
+
+  CREATE TABLE RFILESAVE (NO NUMBER, S_ID NUMBER, ORIGINNAME VARCHAR2(100), NEWFILENAME VARCHAR2(100), FILEPATH VARCHAR2(300), UPDATE_DATE DATE, STATUS VARCHAR2(2) DEFAULT 'Y', FILE_LEVEL NUMBER);
+--------------------------------------------------------
+--  DDL for Table ROOM
+--------------------------------------------------------
+
+  CREATE TABLE ROOM (R_ID NUMBER, PRICE NUMBER, R_NAME VARCHAR2(300), R_CONTENT VARCHAR2(300), S_ID NUMBER, S_TYPE NUMBER);
+--------------------------------------------------------
+--  DDL for Table SLEEP
+--------------------------------------------------------
+
+  CREATE TABLE SLEEP (S_ID NUMBER, S_TYPE NUMBER, S_NAME VARCHAR2(30), S_CONTENT VARCHAR2(300), L_CODE NUMBER, PRICE NUMBER, M_SEQ NUMBER, WRITER VARCHAR2(20), VIEW_CNT NUMBER, STATUS VARCHAR2(5) DEFAULT 'Y', ADDRESS VARCHAR2(200), ENNAME VARCHAR2(50));
+--------------------------------------------------------
+--  DDL for Table SLEEPTYPE
+--------------------------------------------------------
+
+  CREATE TABLE SLEEPTYPE (S_TYPE NUMBER, TYPE_NAME VARCHAR2(20));
+--------------------------------------------------------
+--  DDL for View QALIST
+--------------------------------------------------------
+
+  CREATE OR REPLACE VIEW QALIST (RNUM, QA_ID, QA_TITLE, ENROLL_DATE, M_NAME, QA_TYPE_NAME, QA_STATUS, M_SEQ) AS SELECT ROWNUM RNUM, A.qa_id, A.qa_title, A.enroll_date, A.m_name, A.qa_type_name, A.qa_status, A.m_seq
+    FROM (SELECT QA_ID, QA_TITLE, ENROLL_DATE, M_NAME, QA_TYPE_NAME, QA_STATUS, m_seq
+    FROM QA
+    JOIN QATYPE USING(QA_TYPE)
+    JOIN MEMBER USING(M_SEQ)
+    ORDER BY QA_STATUS DESC, QA_ID DESC) A;
+REM INSERTING into BOARDTYPE
+SET DEFINE OFF;
+Insert into BOARDTYPE (B_TYPE,TYPE_NAME) values (4,'커뮤니티');
+Insert into BOARDTYPE (B_TYPE,TYPE_NAME) values (1,'여행게시판');
+Insert into BOARDTYPE (B_TYPE,TYPE_NAME) values (2,'축제게시판');
+Insert into BOARDTYPE (B_TYPE,TYPE_NAME) values (3,'숙박게시판');
+REM INSERTING into INFORMATION
+SET DEFINE OFF;
+Insert into INFORMATION (B_ID,SDAY,EDAY,TEL,PRICE,ADDRESS,PAGEADDRESS) values (45,to_date('19/12/28','RR/MM/DD'),to_date('20/02/02','RR/MM/DD'),'033-336-4000',0,'강원도 평창군 진부면 경강로 3562','http://www.festival700.or.kr');
+Insert into INFORMATION (B_ID,SDAY,EDAY,TEL,PRICE,ADDRESS,PAGEADDRESS) values (46,to_date('19/12/31','RR/MM/DD'),to_date('19/12/31','RR/MM/DD'),'1666-5683',0,'강원 고성군 죽왕면 삼포리 1-1','http://ocean2you.co.kr/event/');
+Insert into INFORMATION (B_ID,SDAY,EDAY,TEL,PRICE,ADDRESS,PAGEADDRESS) values (47,to_date('19/12/31','RR/MM/DD'),to_date('20/01/01','RR/MM/DD'),'054-289-7852~7858',0,'경상북도 포항시 남구 호미곶면 해맞이로 136','http://phcf.or.kr');
+Insert into INFORMATION (B_ID,SDAY,EDAY,TEL,PRICE,ADDRESS,PAGEADDRESS) values (48,null,null,'043-855-7333',0,'충청북도 충주시 중앙탑면 탑정안길 12','http://www.liquorium.com');
+Insert into INFORMATION (B_ID,SDAY,EDAY,TEL,PRICE,ADDRESS,PAGEADDRESS) values (49,null,null,'061-660-1111',0,'전라남도 여수시 오동도로 61-11','http://www.aquaplanet.co.kr/yeosu');
+Insert into INFORMATION (B_ID,SDAY,EDAY,TEL,PRICE,ADDRESS,PAGEADDRESS) values (50,null,null,'061-749-6052',8000,'전라남도 순천시 순천만길 513-25','http://www.suncheonbay.go.kr/');
+Insert into INFORMATION (B_ID,SDAY,EDAY,TEL,PRICE,ADDRESS,PAGEADDRESS) values (51,null,null,'041-933-7051',0,'충청남도 보령시 머드로 123','http://daecheonbeach.kr/');
+Insert into INFORMATION (B_ID,SDAY,EDAY,TEL,PRICE,ADDRESS,PAGEADDRESS) values (43,to_date('19/12/28','RR/MM/DD'),to_date('19/12/29','RR/MM/DD'),'02-6010-8941',3000,'서울특별시 서초구 강남대로 27 양재 aT센터','http://bit.ly/2ptKvXN');
+Insert into INFORMATION (B_ID,SDAY,EDAY,TEL,PRICE,ADDRESS,PAGEADDRESS) values (44,to_date('19/12/27','RR/MM/DD'),to_date('20/02/09','RR/MM/DD'),'080-233-7766',12000,'경기도 양주시 장흥면 권율로 594','http://www.fes-artvalley.com');
+REM INSERTING into BFILESAVE
+SET DEFINE OFF;
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (50,44,'KakaoTalk_20191227_153806874_02.jpg','201912271614413373.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (51,44,'KakaoTalk_20191227_153806874_03.jpg','2019122716144194928.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (45,43,'KakaoTalk_20191227_153619861_01.jpg','2019122716132847264.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),0);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (46,43,'KakaoTalk_20191227_153619861_02.jpg','2019122716132893935.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (47,43,'KakaoTalk_20191227_153619861_03.jpg','2019122716132843646.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (48,43,'KakaoTalk_20191227_153619861_04.jpg','2019122716132860067.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (49,44,'KakaoTalk_20191227_153806874_01.jpg','2019122716144184554.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),0);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (52,44,'KakaoTalk_20191227_153806874_04.jpg','2019122716144187988.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (53,45,'KakaoTalk_20191227_153901294_01.jpg','2019122716154923776.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),0);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (54,45,'KakaoTalk_20191227_153901294_02.jpg','2019122716154923940.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (55,45,'KakaoTalk_20191227_153901294_03.jpg','2019122716154948800.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (56,45,'KakaoTalk_20191227_153901294_04.jpg','2019122716154911286.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (57,46,'KakaoTalk_20191227_153928717_01.jpg','2019122716165322376.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),0);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (58,46,'KakaoTalk_20191227_153928717_02.jpg','2019122716165393090.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (59,46,'KakaoTalk_20191227_153928717_03.jpg','201912271616537377.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (60,46,'KakaoTalk_20191227_153928717_04.jpg','2019122716165321677.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (61,47,'KakaoTalk_20191227_154010088_01.jpg','2019122716180739214.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),0);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (62,47,'KakaoTalk_20191227_154010088_02.jpg','2019122716180740420.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (63,47,'KakaoTalk_20191227_154010088_03.jpg','2019122716180717211.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (64,47,'KakaoTalk_20191227_154010088_04.jpg','2019122716180742508.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (65,48,'KakaoTalk_20191227_154109814_01.jpg','2019122716192279021.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),0);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (66,48,'KakaoTalk_20191227_154109814_02.jpg','2019122716192348058.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (67,48,'KakaoTalk_20191227_154109814_03.jpg','2019122716192325654.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (68,48,'KakaoTalk_20191227_154109814_04.jpg','2019122716192389236.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (69,49,'KakaoTalk_20191227_154142748_01.jpg','2019122716200695988.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),0);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (70,49,'KakaoTalk_20191227_154142748_02.jpg','2019122716200653720.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (71,49,'KakaoTalk_20191227_154142748_03.jpg','2019122716200615030.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (72,49,'KakaoTalk_20191227_154142748_04.jpg','2019122716200617509.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (73,50,'KakaoTalk_20191227_154232715_01.jpg','2019122716204774682.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),0);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (74,50,'KakaoTalk_20191227_154232715_02.jpg','2019122716204759945.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (75,50,'KakaoTalk_20191227_154232715_03.jpg','2019122716204712422.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (76,50,'KakaoTalk_20191227_154232715_04.jpg','2019122716204712194.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (77,51,'KakaoTalk_20191227_154331840_01.jpg','2019122716213130528.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),0);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (78,51,'KakaoTalk_20191227_154331840_02.jpg','20191227162131429.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (79,51,'KakaoTalk_20191227_154331840_03.jpg','2019122716213182272.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+Insert into BFILESAVE (NO,B_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,WRITE_DATE,FILE_LEVEL) values (80,51,'KakaoTalk_20191227_154331840_04.jpg','2019122716213143115.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/festival_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',to_date('19/12/27','RR/MM/DD'),1);
+REM INSERTING into BOARD
+SET DEFINE OFF;
+Insert into BOARD (B_ID,WRITE_DATE,UPDATE_DATE,TITLE,CONTENT,VIEW_CNT,GOOD,NOTGOOD,WRITER,STATUS,L_CODE,S_TYPE,B_TYPE,M_SEQ) values (43,to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'서울 디저트페어[딸기전]','서울특별시 서초구 강남대로 27 양재 aT센터          국내 최대 수제 디저트페어 “서울디저트페어” 25회 서울디저트페어 [딸기전]에서는 겨울에 가장 대표적인 과일인 달콤한 딸기를 주제로 달콤!상콤한 디자인 마카롱, 수제청 및 에이드 카놀리 등 딸기컨셉 디저트와 함께 꿀케이크나 두부 아이스크림 등 이색 디저트로 달콤한 즐거움을 선보일 예정이다.',1,0,0,'관리자','Y',10,null,2,1);
+Insert into BOARD (B_ID,WRITE_DATE,UPDATE_DATE,TITLE,CONTENT,VIEW_CNT,GOOD,NOTGOOD,WRITER,STATUS,L_CODE,S_TYPE,B_TYPE,M_SEQ) values (44,to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'양주 눈꽃축제2020','양주눈꽃축제는 제과전문그룹 크라운해태의 종합예술테마파크 아트밸리(장흥자연휴양림)의 일곱번째 겨울축제이다. 새하얀 눈의 아름다움을 통해 감사와 사랑 그리고 꿈을 전하는 이번 눈꽃축제는 양주시의 수려한 자연경관 중 으뜸으로 꼽히는 아트밸리 일대에서 펼쳐진다.   ',0,0,0,'관리자','Y',20,null,2,1);
+Insert into BOARD (B_ID,WRITE_DATE,UPDATE_DATE,TITLE,CONTENT,VIEW_CNT,GOOD,NOTGOOD,WRITER,STATUS,L_CODE,S_TYPE,B_TYPE,M_SEQ) values (45,to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'평창송어축제 2020','평창군 진부면에서는 2019년 12월 28일부터 2020년 2월 2일까지 <평창송어축제>를 개최한다. <평창송어축제>에서는 선조들의 삶을 축제로 승화시켜 눈과 얼음, 송어가 함께하는 겨울이야기라는 주제로 매년 겨울마다 송어축제의 장이 펼쳐진다. 송어낚시와 썰매체험 등 다양한 체험 프로그램과 함께 진정한 겨울 축제의 즐거움을 만끽할 수 있다.',0,0,0,'관리자','Y',30,null,2,1);
+Insert into BOARD (B_ID,WRITE_DATE,UPDATE_DATE,TITLE,CONTENT,VIEW_CNT,GOOD,NOTGOOD,WRITER,STATUS,L_CODE,S_TYPE,B_TYPE,M_SEQ) values (46,to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'삼포해수욕장 불꽃놀이&캠프파이어','강원도 고성 아름답고 탁트인 해안선, 반짝거리는 모래사장으로 유명한 삼포해변과 함께 2019년의 끝을 기념하는 불꽃축제가 12월 31일 오션투유리조트 앞 삼포해수욕장에서 개최된다. 고성을 찾는 많은 관광객들이 한해의 마지막을 행복하게 마무리할 수 있는 행사로 여러가지 프로그램들을 개발하고 있다.',0,0,0,'관리자','Y',30,null,2,1);
+Insert into BOARD (B_ID,WRITE_DATE,UPDATE_DATE,TITLE,CONTENT,VIEW_CNT,GOOD,NOTGOOD,WRITER,STATUS,L_CODE,S_TYPE,B_TYPE,M_SEQ) values (47,to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'호미곶 한민족 해맞이 축전 2019','호미곶한민족해맞이축전이 펼쳐지는 호미곶(虎尾串)은 한반도의 가장 동족으로 ''호랑이 꼬리 마을''이라 이름하였다. 또한 이곳은 우리나라에서 가장 먼저 해가 뜨는 일출명소로 알려져 있다. 호미곶의 빛, 포항의 생동감을 깨우다! ',11,0,0,'관리자','Y',50,null,2,1);
+Insert into BOARD (B_ID,WRITE_DATE,UPDATE_DATE,TITLE,CONTENT,VIEW_CNT,GOOD,NOTGOOD,WRITER,STATUS,L_CODE,S_TYPE,B_TYPE,M_SEQ) values (48,to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'술박물관 리쿼리움','* 세계 최초 종합 술박물관, 술박물관 리쿼리움 * 충주 탄금호 중앙탑공원에 자리 잡고 있는 세계 최초 종합 술박물관이다. 리쿼리움은 리쿼(LIQUOR; 술)와 리움(RIUM; 전시관)의 합성어로서 술 박물관이라는 뜻이다. 세계의 유명한 술 생산 국가에는 여러 종류의 술 박물관이 있다. 프랑스의 와인 박물관, 독일의 맥주 박물관, 스코틀랜드의 위스키 박물관이 있는데, 모든 술의 역사와 문화를 통합적으로 전시한 곳은 리퀴리움이 유일한 곳이다. ',0,0,0,'관리자','Y',40,null,1,1);
+Insert into BOARD (B_ID,WRITE_DATE,UPDATE_DATE,TITLE,CONTENT,VIEW_CNT,GOOD,NOTGOOD,WRITER,STATUS,L_CODE,S_TYPE,B_TYPE,M_SEQ) values (49,to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'아쿠아플라넷 여수 ','2012년 ‘여수세계박람회’와 함께 개장한 한화 아쿠아플라넷 여수는 국내 2위 규모로 연간 100만 명이 찾는 남도지역의 랜드마크이다. 국제 희귀종 흰고래 벨루가들과 바이칼 물범 등 총 280여 종 3만 4,000마리의 다양한 해양 생물들과 교감할 수 있다.',0,0,0,'관리자','Y',60,null,1,1);
+Insert into BOARD (B_ID,WRITE_DATE,UPDATE_DATE,TITLE,CONTENT,VIEW_CNT,GOOD,NOTGOOD,WRITER,STATUS,L_CODE,S_TYPE,B_TYPE,M_SEQ) values (50,to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'순천만습지','순천시 교량동과 대대동, 해룡면의 중흥리, 해창리 선학리 등에 걸쳐 있는 순천만 갈대밭의 총 면적은 약 15만평에 달한다. 순천 시내를 관통하는 동천과 순천시 상사면에서 흘러 온 이사천의 합수 지점부터 하구에 이르는 3㎞ 쯤의 물길양쪽이 죄다 갈대밭으로 뒤덮혀 있다. 그것도 드문드문 떨어져 있거나 성기게 군락을 이룬 여느 갈대밭과는 달리, 사람의 키보다 훨씬 더 웃자란 갈대들이 빈틈없이 밀생(密生)한 갈대밭이다.',0,0,0,'관리자','Y',60,null,1,1);
+Insert into BOARD (B_ID,WRITE_DATE,UPDATE_DATE,TITLE,CONTENT,VIEW_CNT,GOOD,NOTGOOD,WRITER,STATUS,L_CODE,S_TYPE,B_TYPE,M_SEQ) values (51,to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'대천해수욕장','충남 보령시 해수욕장4길 일원은 대천해수욕장이다. 이미 1930년대부터 외국인을 위한 휴양단지로 자리 잡은 서해안 최대의 해변이다. 백사장 길이만 3.5km에 폭이 100m에 달한다. 경사가 완만하고 모래가 깨끗하다. 특히 다보도와 어우러지는 노을이 아름답다. 대천해수욕장은 크게 시민탑광장, 머드광장, 분수광장으로 구역이 나뉘는데 피서철에는 각기 다른 즐길거리가 펼쳐진다. 근래 들어서는 머드가 가장 주목받는다.  ',2,0,0,'관리자','Y',40,null,1,1);
+Insert into BOARD (B_ID,WRITE_DATE,UPDATE_DATE,TITLE,CONTENT,VIEW_CNT,GOOD,NOTGOOD,WRITER,STATUS,L_CODE,S_TYPE,B_TYPE,M_SEQ) values (52,to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'가입인사','안녕하세요. 새로 가입했읍니다<p></p>		',5,0,0,'임세웅','Y',null,null,4,61);
+Insert into BOARD (B_ID,WRITE_DATE,UPDATE_DATE,TITLE,CONTENT,VIEW_CNT,GOOD,NOTGOOD,WRITER,STATUS,L_CODE,S_TYPE,B_TYPE,M_SEQ) values (42,to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'asdgasdg','asdgasdgasdga<p></p>		',1,0,0,'관리자','N',null,null,4,1);
+Insert into BOARD (B_ID,WRITE_DATE,UPDATE_DATE,TITLE,CONTENT,VIEW_CNT,GOOD,NOTGOOD,WRITER,STATUS,L_CODE,S_TYPE,B_TYPE,M_SEQ) values (53,to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'공지사항','2019/12/27 22~00시 점검이 있을 예정입니다.',3,0,0,'관리자','Y',null,null,4,1);
+Insert into BOARD (B_ID,WRITE_DATE,UPDATE_DATE,TITLE,CONTENT,VIEW_CNT,GOOD,NOTGOOD,WRITER,STATUS,L_CODE,S_TYPE,B_TYPE,M_SEQ) values (54,to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'가입인사 올립니다','등업 부탁드립니다.<p></p>		',2,0,0,'세웅','Y',null,null,4,62);
+REM INSERTING into QA
+SET DEFINE OFF;
+Insert into QA (QA_ID,QA_TITLE,QA_CONTENT,QA_STATUS,ENROLL_DATE,ANSWER,AN_DATE,M_SEQ,QA_TYPE) values (81,'제목','게시판 디자인이 마음에 들지 않습니다. 수정해 주세요','미답변',to_date('19/12/27','RR/MM/DD'),null,null,61,10);
+Insert into QA (QA_ID,QA_TITLE,QA_CONTENT,QA_STATUS,ENROLL_DATE,ANSWER,AN_DATE,M_SEQ,QA_TYPE) values (82,'게시글','내용을 입력해 주세요.<p></p>		','미답변',to_date('19/12/27','RR/MM/DD'),null,null,61,50);
+Insert into QA (QA_ID,QA_TITLE,QA_CONTENT,QA_STATUS,ENROLL_DATE,ANSWER,AN_DATE,M_SEQ,QA_TYPE) values (84,'홈페이지 디자인이 너무 구려요 ','인정하세요 ?<p></p>		','미답변',to_date('19/12/27','RR/MM/DD'),null,null,62,50);
+REM INSERTING into LOCATION
+SET DEFINE OFF;
+Insert into LOCATION (L_CODE,L_NAME) values (60,'전라도');
+Insert into LOCATION (L_CODE,L_NAME) values (10,'서울특별시');
+Insert into LOCATION (L_CODE,L_NAME) values (20,'경기도');
+Insert into LOCATION (L_CODE,L_NAME) values (30,'강원도');
+Insert into LOCATION (L_CODE,L_NAME) values (40,'충청도');
+Insert into LOCATION (L_CODE,L_NAME) values (50,'경상도');
+REM INSERTING into MEMBER
+SET DEFINE OFF;
+Insert into MEMBER (M_SEQ,M_ID,PASS,M_NAME,PHONE,M_NO,EMAIL,JOIN_DATE,ACCESS_DATE,NICKNAME,B_ID_ARRAY,REPORT,STATUS,PROFILE) values (1,'admin','admin123','관리자','01077645453','960102','admin@naver.com',to_date('19/12/26','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'관리자',null,0,'Y',null);
+Insert into MEMBER (M_SEQ,M_ID,PASS,M_NAME,PHONE,M_NO,EMAIL,JOIN_DATE,ACCESS_DATE,NICKNAME,B_ID_ARRAY,REPORT,STATUS,PROFILE) values (61,'dlatpdnd','dlatpdnd1','임세웅','01088799145','595959','sterme9@naver.com',to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'임세웅',null,1,'Y','angry50.png');
+Insert into MEMBER (M_SEQ,M_ID,PASS,M_NAME,PHONE,M_NO,EMAIL,JOIN_DATE,ACCESS_DATE,NICKNAME,B_ID_ARRAY,REPORT,STATUS,PROFILE) values (62,'dlatpdnd2','dlatpdnd1','임세웅','01088799145','660228','sterme9@naver.com',to_date('19/12/27','RR/MM/DD'),to_date('19/12/27','RR/MM/DD'),'임세웅',null,0,'Y','smile.jpg');
+REM INSERTING into MYPLAN
+SET DEFINE OFF;
+Insert into MYPLAN (P_SEQ,M_SEQ,P_NAME,START_DATE,END_DATE,START_TIME,END_TIME,FILENAME,URL) values (2,61,'축제',to_date('19/12/31','RR/MM/DD'),to_date('19/12/31','RR/MM/DD'),'12:00','12:00','2019122714210647653.jpg','/TravelMaker/detail.fe?bId=41');
+Insert into MYPLAN (P_SEQ,M_SEQ,P_NAME,START_DATE,END_DATE,START_TIME,END_TIME,FILENAME,URL) values (3,61,'호미곶 한민족 해맞이 축전 2019',to_date('19/12/30','RR/MM/DD'),to_date('19/12/30','RR/MM/DD'),'12:00','12:00','2019122716180739214.jpg','/TravelMaker/detail.fe?bId=47');
+Insert into MYPLAN (P_SEQ,M_SEQ,P_NAME,START_DATE,END_DATE,START_TIME,END_TIME,FILENAME,URL) values (6,62,'호미곶 한민족 해맞이 축전 2019',to_date('20/01/03','RR/MM/DD'),to_date('20/01/03','RR/MM/DD'),'12:00','12:00','2019122716180739214.jpg','/TravelMaker/detail.fe?bId=47');
+Insert into MYPLAN (P_SEQ,M_SEQ,P_NAME,START_DATE,END_DATE,START_TIME,END_TIME,FILENAME,URL) values (2,62,'호미곶 한민족 해맞이 축전 2019',to_date('19/12/30','RR/MM/DD'),to_date('19/12/30','RR/MM/DD'),'12:00','12:00','2019122716180739214.jpg','/TravelMaker/detail.fe?bId=47');
+Insert into MYPLAN (P_SEQ,M_SEQ,P_NAME,START_DATE,END_DATE,START_TIME,END_TIME,FILENAME,URL) values (3,62,'호미곶 한민족 해맞이 축전 2019',to_date('19/12/29','RR/MM/DD'),to_date('19/12/29','RR/MM/DD'),'12:00','12:00','2019122716180739214.jpg','/TravelMaker/detail.fe?bId=47');
+Insert into MYPLAN (P_SEQ,M_SEQ,P_NAME,START_DATE,END_DATE,START_TIME,END_TIME,FILENAME,URL) values (4,62,'평창송어축제 2020',to_date('20/01/01','RR/MM/DD'),to_date('20/01/01','RR/MM/DD'),'12:00','12:00','2019122716154923776.jpg','/TravelMaker/detail.fe?bId=46');
+Insert into MYPLAN (P_SEQ,M_SEQ,P_NAME,START_DATE,END_DATE,START_TIME,END_TIME,FILENAME,URL) values (5,62,'평창송어축제 2020',to_date('20/01/02','RR/MM/DD'),to_date('20/01/02','RR/MM/DD'),'12:00','12:00','2019122716154923776.jpg','/TravelMaker/detail.fe?bId=46');
+REM INSERTING into QATYPE
+SET DEFINE OFF;
+Insert into QATYPE (QA_TYPE,QA_TYPE_NAME) values (10,'글쓰기');
+Insert into QATYPE (QA_TYPE,QA_TYPE_NAME) values (20,'여행지');
+Insert into QATYPE (QA_TYPE,QA_TYPE_NAME) values (30,'숙박');
+Insert into QATYPE (QA_TYPE,QA_TYPE_NAME) values (40,'회원');
+Insert into QATYPE (QA_TYPE,QA_TYPE_NAME) values (50,'시스템');
+REM INSERTING into REPLY
+SET DEFINE OFF;
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (1,'ㅎㅇㅎㅇ',to_date('19/12/19','RR/MM/DD'),28,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (2,'어디갔니?',to_date('19/12/19','RR/MM/DD'),28,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (3,'ㅎㅇㅎㅇ',to_date('19/12/19','RR/MM/DD'),28,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (4,'gd',to_date('19/12/19','RR/MM/DD'),28,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (5,'gdgd',to_date('19/12/19','RR/MM/DD'),28,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (6,'됐네용',to_date('19/12/19','RR/MM/DD'),28,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (7,'asdasd',to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (8,'gd',to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (9,'asdfasdf',to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (10,'z',to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (11,'asd',to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (12,'asd',to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (13,'gd',to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (14,'gd',to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (15,'gd',to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (16,'gd',to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (17,'gd',to_date('19/12/19','RR/MM/DD'),28,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (18,'gd',to_date('19/12/19','RR/MM/DD'),28,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (19,'dhodksskdhk
+',to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (20,'asdfsadf',to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (21,null,to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (22,'asdf',to_date('19/12/19','RR/MM/DD'),29,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (23,'ㅁㄴㅇㅁㄴㅇㅁㄴ',to_date('19/12/19','RR/MM/DD'),30,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (24,'ㅁㄴㅇㅁㄴㅇ',to_date('19/12/19','RR/MM/DD'),30,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (25,'ㅁㄴㅇ',to_date('19/12/19','RR/MM/DD'),30,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (26,'ㅁㄴㅇㅁㄴㅇ',to_date('19/12/19','RR/MM/DD'),30,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (27,'ㄴㅇㅁㄴㅇ',to_date('19/12/19','RR/MM/DD'),30,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (28,'zzzz',to_date('19/12/19','RR/MM/DD'),30,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (41,'여기가 우리집이야',to_date('19/12/20','RR/MM/DD'),31,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (42,'ㅎㅎㅎ',to_date('19/12/23','RR/MM/DD'),30,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (43,'어때?',to_date('19/12/23','RR/MM/DD'),56,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (44,'asdasd',to_date('19/12/24','RR/MM/DD'),59,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (45,'asdfasdf',to_date('19/12/26','RR/MM/DD'),72,17,'N');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (46,'asdasd',to_date('19/12/26','RR/MM/DD'),72,17,'N');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (47,'asdasd',to_date('19/12/26','RR/MM/DD'),72,17,'N');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (48,'asdasdasdsad',to_date('19/12/26','RR/MM/DD'),73,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (49,'ggggg',to_date('19/12/26','RR/MM/DD'),73,17,'N');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (50,'asdasd',to_date('19/12/26','RR/MM/DD'),72,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (51,'asdasdad',to_date('19/12/26','RR/MM/DD'),72,17,'N');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (52,'asdasd',to_date('19/12/26','RR/MM/DD'),72,17,'N');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (53,'qweqweqwe',to_date('19/12/26','RR/MM/DD'),73,17,'N');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (54,'ㅁㄴㅇㅁㄴㅇ',to_date('19/12/26','RR/MM/DD'),81,17,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (103,'ㄴㅁㄹㄴㅁㅎ',to_date('19/12/27','RR/MM/DD'),52,1,'N');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (104,'여러분.. 관심이 필요합니다 ^^',to_date('19/12/27','RR/MM/DD'),52,61,'N');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (105,'여러분.. 댓글 좀 달아주세요 ^^',to_date('19/12/27','RR/MM/DD'),52,61,'Y');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (106,'^^',to_date('19/12/27','RR/MM/DD'),47,61,'N');
+Insert into REPLY (R_ID,R_CONTENT,WRITE_DATE,B_ID,M_SEQ,STATUS) values (116,'댓글 좀 써주세요',to_date('19/12/27','RR/MM/DD'),54,62,'Y');
+REM INSERTING into RESERVATION
+SET DEFINE OFF;
+REM INSERTING into RFILESAVE
+SET DEFINE OFF;
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (66,12,'01 (1).jpg','2019122716131594522.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (67,12,'01 (1).jpg','2019122716131524562.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (68,12,'01 (2).jpg','2019122716131581633.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (69,12,'01 (3).jpg','2019122716131598864.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (70,12,'01 (4).jpg','201912271613157190.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (71,12,'01 (2).jpg','2019122716131513384.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (72,12,'01 (6).jpg','2019122716131538811.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (73,12,'01 (5).jpg','2019122716131513358.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (74,13,'8a55480d7a798ff56b090e8277c46b08.jpg','2019122716162474528.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',2);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (75,13,'01.jpg','2019122716162430077.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (76,13,'2b0fb1c8cfd66a1e81515dbd528ec50c.jpg','2019122716162445119.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (77,13,'01 (7).jpg','2019122716162455631.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (78,13,'8a55480d7a798ff56b090e8277c46b08.jpg','2019122716162447803.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (79,13,'4d256ef2df61a70809f47a278b0c0c0c.jpg','2019122716162474538.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (80,13,'5f3da0325517f42b2d689a1e300c8570.jpg','2019122716162459124.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (81,13,'01.jpg','2019122716162463997.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (82,13,'01.jpg','201912271616245688.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (83,13,'01 (5).jpg','2019122716162442962.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (84,14,'28ba8b7a30dc78f4808e482b75ec0266.jpg','2019122716200114194.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',2);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (85,14,'310ce350f01581d289e71114eb0265f5.jpg','2019122716200185025.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (86,14,'593dd9718a700542c612c59c577b728f.jpg','2019122716200174689.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (87,14,'310ce350f01581d289e71114eb0265f5.jpg','2019122716200123452.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (88,14,'81550abdb046639319af9e17328c0bec.jpg','2019122716200184615.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (89,14,'bbba9bfc3021010f363adb3f8c551a79.jpg','2019122716200126862.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (90,14,'671db172543272c2ceca4f58c1ebd2a1.jpg','2019122716200193950.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (91,14,'a850f48803eb514f8e663731b3e14126.jpg','201912271620017357.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (92,14,'a1269ad49d74f8f502084dc7f869f3ce.jpg','2019122716200146020.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (93,14,'eb0f738705199e8eb69e9d529858a7fa.jpg','201912271620011977.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (114,17,'2fd3705e949e427c9c6dd781b2292ec7.jpg','2019122716535376564.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',2);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (115,17,'5aebec2d70bfa.jpg','2019122716535370810.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (116,17,'5aebec9eafce1.jpg','2019122716535342679.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (117,17,'5aebec42cb5c5.jpg','2019122716535337284.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (118,17,'5aebec19c9579.jpg','2019122716535324329.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (119,17,'2fd3705e949e427c9c6dd781b2292ec7.jpg','2019122716535331721.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (120,17,'5aebec42cb5c5.jpg','2019122716535321826.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (121,17,'5aebec2d70bfa.jpg','2019122716535372155.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (122,17,'5aebed005b6d6.jpg','2019122716535374663.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (123,17,'5aebec9eafce1.jpg','2019122716535356915.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (124,18,'5c6e3b7b38f87.jpg','2019122716560630889.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',2);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (125,18,'5df324f49796f.jpg','2019122716560650931.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (126,18,'6cdc2fdd4e7c45aeb8c3f308ceeccf7c.jpg','2019122716560692497.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (25,8,'플러스.png','2019122715360814159.png','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'N',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (26,8,'WIN_20181011_12_32_29_Pro.jpg','2019122715360881476.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'N',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (27,8,'호1.jpg','2019122715360845427.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'N',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (28,8,'마이너스.png','2019122715360869296.png','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'N',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (29,8,'플러스.png','2019122715360821055.png','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'N',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (30,8,'호1.jpg','2019122715360895467.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'N',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (31,8,'WIN_20181011_12_32_10_Pro.jpg','2019122715360857972.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'N',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (32,8,'호2.jpg','2019122715360823129.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'N',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (33,8,'WIN_20181011_12_32_09_Pro (3).jpg','2019122715360810663.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'N',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (34,9,'57425b6f5a563.jpg','2019122715525053033.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',2);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (35,9,'57425b936f319.jpg','2019122715525056373.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (36,9,'57425b989f137.jpg','201912271552501117.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (37,9,'573ec1f02bb94.jpg','2019122715525082040.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (38,9,'57425ba722c72.jpg','2019122715525081985.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (39,9,'57425bab63388.jpg','201912271552508529.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (24,8,'호1.jpg','2019122715360839202.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'N',2);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (40,9,'57425bb30bd4b.jpg','2019122715525022030.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (41,9,'57425b936f319.jpg','2019122715525086294.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (42,9,'594379411062f.jpg','201912271552503817.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (43,9,'573ec1ebe9f3c.jpg','2019122715525080877.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (44,10,'5dedbf39d6a41.jpg','2019122715555436274.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',2);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (45,10,'5ae1602133984.jpg','2019122715555487635.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (46,10,'5ae15fdfde0fd.jpg','2019122715555493798.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (47,10,'5ae1602133984.jpg','201912271555541028.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (48,10,'5ae15fb0efaf0.jpg','2019122715555463084.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (49,10,'5a96964f60b4a.jpg','2019122715555492279.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (50,10,'5ca5c6a88ef05.jpg','2019122715555456629.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (51,10,'5dd3a0fca5039.jpg','2019122715555462730.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (52,10,'5ca5c6a776827.jpg','2019122715555425793.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (53,10,'5ae15fdfde0fd.jpg','2019122715555457304.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (54,11,'5da8243f48386.jpg','2019122716072998628.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',2);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (55,11,'5dd3a0fca5039.jpg','2019122716072949549.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (56,11,'5dd3a0fda907d.jpg','2019122716072988191.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (57,11,'5dd3a09f911f6.jpg','2019122716072917335.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (58,11,'5dd3a09e9a430.jpg','201912271607297361.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (59,11,'5dd3a09f911f6.jpg','201912271607294293.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (60,11,'5de5bdb3c7626.jpg','2019122716072996759.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (61,11,'5de5bdb4c8110.jpg','2019122716072980417.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (62,11,'5de5bdb4c8110.jpg','2019122716072937912.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (63,11,'5dd3a0fca5039.jpg','2019122716072921608.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (64,12,'0b66855ef71fbbed937533a3e33c3b15.jpg','2019122716131556016.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',2);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (65,12,'0c586b6f49239f8fb4070da8740c68e8.jpg','2019122716131590226.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (127,18,'6cdc2fdd4e7c45aeb8c3f308ceeccf7c.jpg','2019122716560641794.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (128,18,'7cd61cac47b24e53806e3a50068ac391.jpg','20191227165606922.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (129,18,'8f82c2b7526a44c88cfd147fad36ad3f.jpg','2019122716560693277.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (130,18,'395bacb19eb246c28fffa68c47952994.jpg','201912271656065311.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (131,18,'395bacb19eb246c28fffa68c47952994.jpg','2019122716560634500.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (132,18,'5c6e3b7b38f87.jpg','2019122716560666896.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (133,18,'5df324f49796f.jpg','2019122716560640741.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (134,19,'2104a942d45b4a06ad2c23ed20c0c8d3.jpg','2019122716584011569.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',2);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (135,19,'58882cba19137.jpg','2019122716584053755.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (136,19,'58882cc3a6f16.jpg','2019122716584035897.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (137,19,'58882cba19137.jpg','2019122716584090539.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (138,19,'58882ce6f3d5d.jpg','2019122716584097040.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (139,19,'58882d9308006.jpg','2019122716584057335.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (140,19,'58882c4761ece.jpg','2019122716584042050.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (141,19,'58882d8fa69b9.jpg','2019122716584011375.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (142,19,'58882d8fa69b9.jpg','2019122716584075113.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+Insert into RFILESAVE (NO,S_ID,ORIGINNAME,NEWFILENAME,FILEPATH,UPDATE_DATE,STATUS,FILE_LEVEL) values (143,19,'58882d9107c4d.jpg','201912271658407337.jpg','C:\Users\user\Desktop\TravelMaker최종\TRAVELMAKER\TravelMaker\WebContent\/resources/sleep_uploadFile/',to_date('19/12/27','RR/MM/DD'),'Y',3);
+REM INSERTING into ROOM
+SET DEFINE OFF;
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (80,2000,'A','투베드룸',9,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (81,3000,'A','깔끔룸',9,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (82,10000,'A','싱글베드',10,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (83,60000,'A','쓰리베드룸',10,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (84,70000,'A','옐로우베드룸',10,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (85,1000,'A','옐로우룸',11,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (86,50000,'A','스위트룸',11,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (87,60000,'A','더블베드',11,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (88,5000,'A','원베드',12,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (89,60000,'A','깔끔 원베드',12,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (90,70000,'A','옥탑방 느낌 원베드',12,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (91,5000,'A','깰꼼 원베드',13,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (92,70000,'A','스위트룸',13,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (93,80000,'A','럭셔리 룸',13,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (94,60000,'A','대리석 룸',14,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (95,2,'A','생활관 룸',14,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (96,30000,'A','깔끔쓰 룸',14,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (97,67000,'A','일반 룸',14,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (98,80000,'A','스위트 룸',14,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (99,75000,'A','럭셔리 룸',14,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (100,67000,'A','일반',14,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (101,75000,'A','프린세스',14,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (102,81000,'A','스위트',14,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (107,9000,'A','핑꾸',17,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (108,6000,'A','화이트',17,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (109,8000,'A','레드',17,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (110,50000,'A','싱글베드',18,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (111,50000,'A','옥탑방',18,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (112,60000,'A','럭셔리룸',18,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (113,60000,'A','오계단!',19,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (76,123,'A','asdf',8,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (77,124,'A','asdf',8,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (78,123,'A','adsf',8,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (79,1000,'A','침대원',9,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (114,70000,'A','알록달록',19,1);
+Insert into ROOM (R_ID,PRICE,R_NAME,R_CONTENT,S_ID,S_TYPE) values (115,90000,'A','창문룸',19,1);
+REM INSERTING into SLEEP
+SET DEFINE OFF;
+Insert into SLEEP (S_ID,S_TYPE,S_NAME,S_CONTENT,L_CODE,PRICE,M_SEQ,WRITER,VIEW_CNT,STATUS,ADDRESS,ENNAME) values (9,1,'신라스테이','차분하고 깔끔한 인테리어와 합리적인 가격을 통해 비즈니스는 물론 도심 속 여행을 즐기기에 적합한 호텔입니다',10,2000,1,'관리자',null,'Y','서울 마포구 도화동 570','sinla stay');
+Insert into SLEEP (S_ID,S_TYPE,S_NAME,S_CONTENT,L_CODE,PRICE,M_SEQ,WRITER,VIEW_CNT,STATUS,ADDRESS,ENNAME) values (10,1,'센터마크','고급스러운 브라운계열의 인테리어는 여행과 일상에 지친 여러분에게 최상의 안락함을 제공할 것입니다',20,4000,1,'관리자',null,'Y','경기도 경기구 관훈동 198-42','Center Mark');
+Insert into SLEEP (S_ID,S_TYPE,S_NAME,S_CONTENT,L_CODE,PRICE,M_SEQ,WRITER,VIEW_CNT,STATUS,ADDRESS,ENNAME) values (11,1,'안다즈','현대 생활과 지역 문화 감각을 이어주는 하얏트의 럭셔리 라이프 스타일 호텔!
+도보로 이동 가능한 청담은 한국의 럭셔리, 패션, 뷰티의 중심가로 자리 잡고 있습니다
+미술관과 갤러리, 최상급 레스토랑이 위치하고 있습니다',30,3000,1,'관리자',null,'Y','강원도 원주시 간계동  603','Andaz');
+Insert into SLEEP (S_ID,S_TYPE,S_NAME,S_CONTENT,L_CODE,PRICE,M_SEQ,WRITER,VIEW_CNT,STATUS,ADDRESS,ENNAME) values (12,2,'스타','익선동 3분거리, 인사동 3분거리, 북촌 한옥마을 3분거리.
+고궁과 한국 전통의 멋과 맛을 즐겨보세요.',10,2000,1,'관리자',null,'Y','서울시 강남구 153','Star');
+Insert into SLEEP (S_ID,S_TYPE,S_NAME,S_CONTENT,L_CODE,PRICE,M_SEQ,WRITER,VIEW_CNT,STATUS,ADDRESS,ENNAME) values (13,2,'아비숑','다양한 음식을 맛볼 수 있는 레스토랑, 바, 커피숍 그리고 가족모임이나 비즈니스 모임을 수용할 수 있는 객실과 부대시설이 마련되어 있어 단체고객님들도 여유로운 공간을 이용하실 수 있습니다',20,6000,1,'관리자',null,'Y','경기도 단구동 202','AbiSong');
+Insert into SLEEP (S_ID,S_TYPE,S_NAME,S_CONTENT,L_CODE,PRICE,M_SEQ,WRITER,VIEW_CNT,STATUS,ADDRESS,ENNAME) values (14,2,'더케이','모텔 옆 산책로 인기있는 서초문화예술공원이 자리하고 있어 가족, 연인들과 도심 속 여유로운 여행을 즐길 수 있습니다',30,8000,1,'관리자',null,'Y','원주시 봉산동 봉산길 119-112','TheK');
+Insert into SLEEP (S_ID,S_TYPE,S_NAME,S_CONTENT,L_CODE,PRICE,M_SEQ,WRITER,VIEW_CNT,STATUS,ADDRESS,ENNAME) values (17,3,'모노펜션','물소리를 들으며 잠이 들고 새소리에 잠에서 깨며 편안한 휴식을 취할 수 있는 펜션입니다
+아기자기한 소품과 아름다운 색상의 객실이 잘 어우러지는 펜션입니다',20,6000,1,'관리자',null,'Y','경기 양평군 서종면 수능리 27-2','MoNo');
+Insert into SLEEP (S_ID,S_TYPE,S_NAME,S_CONTENT,L_CODE,PRICE,M_SEQ,WRITER,VIEW_CNT,STATUS,ADDRESS,ENNAME) values (18,3,'엘모로','해수욕장이 펜션과 가까워 물놀이와 아름다운 바다의 풍경까지 함께 즐길 수 있는 펜션입니다
+넓고 깨끗한 객실과 커플룸과 가족룸까지 갖쳐줘 있는 편안함이 있는 펜션입니다',30,90000,1,'관리자',null,'Y','강릉시 서신면 제부리 102','Lmoro');
+Insert into SLEEP (S_ID,S_TYPE,S_NAME,S_CONTENT,L_CODE,PRICE,M_SEQ,WRITER,VIEW_CNT,STATUS,ADDRESS,ENNAME) values (19,3,'미고','하루에 2번 밀물썰물이 있는 낭만적인 제부도 해안 산책로를 사랑하는 연인과 함께 걸어보세요
+여기서 바라보는 일출과 일몰을 배경삼아 편안한 휴식을 취할 수 있습니다',10,80000,1,'관리자',null,'Y','신림 제부리95','Migo');
+REM INSERTING into SLEEPTYPE
+SET DEFINE OFF;
+Insert into SLEEPTYPE (S_TYPE,TYPE_NAME) values (1,'호텔');
+Insert into SLEEPTYPE (S_TYPE,TYPE_NAME) values (2,'모텔');
+Insert into SLEEPTYPE (S_TYPE,TYPE_NAME) values (3,'펜션');
+REM INSERTING into QALIST
+SET DEFINE OFF;
+Insert into QALIST (RNUM,QA_ID,QA_TITLE,ENROLL_DATE,M_NAME,QA_TYPE_NAME,QA_STATUS,M_SEQ) values (1,84,'홈페이지 디자인이 너무 구려요 ',to_date('19/12/27','RR/MM/DD'),'임세웅','시스템','미답변',62);
+Insert into QALIST (RNUM,QA_ID,QA_TITLE,ENROLL_DATE,M_NAME,QA_TYPE_NAME,QA_STATUS,M_SEQ) values (2,82,'게시글',to_date('19/12/27','RR/MM/DD'),'임세웅','시스템','미답변',61);
+Insert into QALIST (RNUM,QA_ID,QA_TITLE,ENROLL_DATE,M_NAME,QA_TYPE_NAME,QA_STATUS,M_SEQ) values (3,81,'제목',to_date('19/12/27','RR/MM/DD'),'임세웅','글쓰기','미답변',61);
+--------------------------------------------------------
+--  DDL for Index PK_BOARDTYPE
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_BOARDTYPE ON BOARDTYPE (B_TYPE);
+--------------------------------------------------------
+--  DDL for Index PK_INFORMATION
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_INFORMATION ON INFORMATION (B_ID);
+--------------------------------------------------------
+--  DDL for Index PK_BFILESAVE
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_BFILESAVE ON BFILESAVE (NO, B_ID);
+--------------------------------------------------------
+--  DDL for Index PK_BOARD
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_BOARD ON BOARD (B_ID);
+--------------------------------------------------------
+--  DDL for Index PK_QA
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_QA ON QA (QA_ID);
+--------------------------------------------------------
+--  DDL for Index PK_LOCATION
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_LOCATION ON LOCATION (L_CODE);
+--------------------------------------------------------
+--  DDL for Index PK_MEMBER
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_MEMBER ON MEMBER (M_SEQ);
+--------------------------------------------------------
+--  DDL for Index PK_MYPLAN
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_MYPLAN ON MYPLAN (P_SEQ, M_SEQ);
+--------------------------------------------------------
+--  DDL for Index PK_QATYPE
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_QATYPE ON QATYPE (QA_TYPE);
+--------------------------------------------------------
+--  DDL for Index PK_REPLY
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_REPLY ON REPLY (R_ID);
+--------------------------------------------------------
+--  DDL for Index PK_RESERVATION
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_RESERVATION ON RESERVATION (RSV_ID, M_SEQ);
+--------------------------------------------------------
+--  DDL for Index PK_RFILESAVE
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_RFILESAVE ON RFILESAVE (NO, S_ID);
+--------------------------------------------------------
+--  DDL for Index PK_ROOM
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_ROOM ON ROOM (R_ID);
+--------------------------------------------------------
+--  DDL for Index PK_SLEEP
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_SLEEP ON SLEEP (S_ID, S_TYPE);
+--------------------------------------------------------
+--  DDL for Index PK_SLEEPTYPE
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX PK_SLEEPTYPE ON SLEEPTYPE (S_TYPE);
+--------------------------------------------------------
+--  Constraints for Table BOARDTYPE
+--------------------------------------------------------
+
+  ALTER TABLE BOARDTYPE ADD CONSTRAINT PK_BOARDTYPE PRIMARY KEY (B_TYPE) ENABLE;
+  ALTER TABLE BOARDTYPE MODIFY (B_TYPE NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table INFORMATION
+--------------------------------------------------------
+
+  ALTER TABLE INFORMATION ADD CONSTRAINT PK_INFORMATION PRIMARY KEY (B_ID) ENABLE;
+  ALTER TABLE INFORMATION MODIFY (ADDRESS NOT NULL ENABLE);
+  ALTER TABLE INFORMATION MODIFY (B_ID NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table BFILESAVE
+--------------------------------------------------------
+
+  ALTER TABLE BFILESAVE ADD CONSTRAINT PK_BFILESAVE PRIMARY KEY (NO, B_ID) ENABLE;
+  ALTER TABLE BFILESAVE MODIFY (B_ID NOT NULL ENABLE);
+  ALTER TABLE BFILESAVE MODIFY (NO NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table BOARD
+--------------------------------------------------------
+
+  ALTER TABLE BOARD ADD CONSTRAINT PK_BOARD PRIMARY KEY (B_ID) ENABLE;
+  ALTER TABLE BOARD MODIFY (M_SEQ NOT NULL ENABLE);
+  ALTER TABLE BOARD MODIFY (B_TYPE NOT NULL ENABLE);
+  ALTER TABLE BOARD MODIFY (WRITER NOT NULL ENABLE);
+  ALTER TABLE BOARD MODIFY (B_ID NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table QA
+--------------------------------------------------------
+
+  ALTER TABLE QA ADD CONSTRAINT PK_QA PRIMARY KEY (QA_ID) ENABLE;
+  ALTER TABLE QA MODIFY (M_SEQ NOT NULL ENABLE);
+  ALTER TABLE QA MODIFY (QA_CONTENT NOT NULL ENABLE);
+  ALTER TABLE QA MODIFY (QA_TITLE NOT NULL ENABLE);
+  ALTER TABLE QA MODIFY (QA_ID NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table LOCATION
+--------------------------------------------------------
+
+  ALTER TABLE LOCATION ADD CONSTRAINT PK_LOCATION PRIMARY KEY (L_CODE) ENABLE;
+  ALTER TABLE LOCATION MODIFY (L_CODE NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table MEMBER
+--------------------------------------------------------
+
+  ALTER TABLE MEMBER ADD CONSTRAINT PK_MEMBER PRIMARY KEY (M_SEQ) ENABLE;
+  ALTER TABLE MEMBER MODIFY (EMAIL NOT NULL ENABLE);
+  ALTER TABLE MEMBER MODIFY (M_NO NOT NULL ENABLE);
+  ALTER TABLE MEMBER MODIFY (M_NAME NOT NULL ENABLE);
+  ALTER TABLE MEMBER MODIFY (PASS NOT NULL ENABLE);
+  ALTER TABLE MEMBER MODIFY (M_ID NOT NULL ENABLE);
+  ALTER TABLE MEMBER MODIFY (M_SEQ NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table MYPLAN
+--------------------------------------------------------
+
+  ALTER TABLE MYPLAN ADD CONSTRAINT PK_MYPLAN PRIMARY KEY (P_SEQ, M_SEQ) ENABLE;
+  ALTER TABLE MYPLAN MODIFY (END_TIME NOT NULL ENABLE);
+  ALTER TABLE MYPLAN MODIFY (START_TIME NOT NULL ENABLE);
+  ALTER TABLE MYPLAN MODIFY (END_DATE NOT NULL ENABLE);
+  ALTER TABLE MYPLAN MODIFY (START_DATE NOT NULL ENABLE);
+  ALTER TABLE MYPLAN MODIFY (P_NAME NOT NULL ENABLE);
+  ALTER TABLE MYPLAN MODIFY (M_SEQ NOT NULL ENABLE);
+  ALTER TABLE MYPLAN MODIFY (P_SEQ NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table QATYPE
+--------------------------------------------------------
+
+  ALTER TABLE QATYPE ADD CONSTRAINT PK_QATYPE PRIMARY KEY (QA_TYPE) ENABLE;
+  ALTER TABLE QATYPE MODIFY (QA_TYPE_NAME NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table REPLY
+--------------------------------------------------------
+
+  ALTER TABLE REPLY ADD CONSTRAINT PK_REPLY PRIMARY KEY (R_ID) ENABLE;
+  ALTER TABLE REPLY MODIFY (M_SEQ NOT NULL ENABLE);
+  ALTER TABLE REPLY MODIFY (B_ID NOT NULL ENABLE);
+  ALTER TABLE REPLY MODIFY (R_ID NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table RESERVATION
+--------------------------------------------------------
+
+  ALTER TABLE RESERVATION ADD CONSTRAINT PK_RESERVATION PRIMARY KEY (RSV_ID, M_SEQ) ENABLE;
+  ALTER TABLE RESERVATION MODIFY (R_ID NOT NULL ENABLE);
+  ALTER TABLE RESERVATION MODIFY (M_SEQ NOT NULL ENABLE);
+  ALTER TABLE RESERVATION MODIFY (RSV_ID NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table RFILESAVE
+--------------------------------------------------------
+
+  ALTER TABLE RFILESAVE ADD CONSTRAINT PK_RFILESAVE PRIMARY KEY (NO, S_ID) ENABLE;
+  ALTER TABLE RFILESAVE MODIFY (S_ID NOT NULL ENABLE);
+  ALTER TABLE RFILESAVE MODIFY (NO NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ROOM
+--------------------------------------------------------
+
+  ALTER TABLE ROOM ADD CONSTRAINT PK_ROOM PRIMARY KEY (R_ID) ENABLE;
+  ALTER TABLE ROOM MODIFY (S_ID NOT NULL ENABLE);
+  ALTER TABLE ROOM MODIFY (R_NAME NOT NULL ENABLE);
+  ALTER TABLE ROOM MODIFY (PRICE NOT NULL ENABLE);
+  ALTER TABLE ROOM MODIFY (R_ID NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table SLEEP
+--------------------------------------------------------
+
+  ALTER TABLE SLEEP ADD CONSTRAINT PK_SLEEP PRIMARY KEY (S_ID, S_TYPE) ENABLE;
+  ALTER TABLE SLEEP MODIFY (L_CODE NOT NULL ENABLE);
+  ALTER TABLE SLEEP MODIFY (S_ID NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table SLEEPTYPE
+--------------------------------------------------------
+
+  ALTER TABLE SLEEPTYPE ADD CONSTRAINT PK_SLEEPTYPE PRIMARY KEY (S_TYPE) ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table INFORMATION
+--------------------------------------------------------
+
+  ALTER TABLE INFORMATION ADD CONSTRAINT FK_BOARD_TO_INFORMATION_1 FOREIGN KEY (B_ID) REFERENCES BOARD (B_ID) ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MYPLAN
+--------------------------------------------------------
+
+  ALTER TABLE MYPLAN ADD CONSTRAINT FK_MEMBER_TO_MYPLAN_1 FOREIGN KEY (M_SEQ) REFERENCES MEMBER (M_SEQ) ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table RESERVATION
+--------------------------------------------------------
+
+  ALTER TABLE RESERVATION ADD CONSTRAINT FK_MEMBER_TO_RESERVATION_1 FOREIGN KEY (M_SEQ) REFERENCES MEMBER (M_SEQ) ENABLE;
