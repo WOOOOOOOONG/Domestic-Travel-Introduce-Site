@@ -34,7 +34,7 @@ Tomcat 8.5, JSP/Servlet
   회원 가입을 위해 저장될 값들을 받아오고, 추가적인 기능으로 아이디 중복확인, 비밀번호를 비롯한 모든 내용에 정규화, 이메일 인증, 잘못 기입하거나 기입하지 않은 내용이 있을 경우 '가입하기'버튼이 눌리지 않는 내용에 대한 처리
 </div>
    
-<div width="100%" height="410">
+<div style="width:900px; height:410px;">
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLm7TV%2FbtqCsHqu4NN%2FKgAUkXsLSvXHwa2GqoOaI1%2Fimg.png">
   <b>ID/PWD 찾기</b>
   ID 또는 Password를 잊은 사용자를 위한 ID/PWD 찾기 페이지로, DB에 저장되어 있는 사용자의 정보와 일치한다면 계정에 대한 정보를 알려주도록 구현.  
