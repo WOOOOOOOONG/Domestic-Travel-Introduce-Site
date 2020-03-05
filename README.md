@@ -28,10 +28,9 @@ Tomcat 8.5, JSP/Servlet
 </div>
 
 ## 담당 역할
-* 계정 관련 기능  
 <div>
   <img width="100%" height="500" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbaOn8N%2FbtqCuYL1sa6%2FLIlRgamDwA2KJqef5vyqD0%2Fimg.png">  
-</div>  
+</div> 계정 관련 기능
 * 마이페이지 및 일정 관리  
 <div>
   <img width="100%" height="500" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2F2V4mu%2FbtqCvx8zQtk%2FgkC898T7MyHCepJd00CnT0%2Fimg.png">  
