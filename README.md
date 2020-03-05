@@ -23,3 +23,7 @@ Tomcat 8.5, JSP/Servlet
 * 관리자 페이지
 
 ## DB 설계
+<div>
+  <img width="100%" height="500" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbQnR5q%2FbtqCrjXQPco%2F6iZf2FnONwKlVn3UTNHwiK%2Fimg.png">  
+</div>
+
