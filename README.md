@@ -29,7 +29,7 @@ Tomcat 8.5, JSP/Servlet
 
 ## 담당 역할
 <div>
-  <img width="44%" height="500" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fb5GrRF%2FbtqCu0b7KzD%2FOTDk4pxtoCuPdVrcixE0Pk%2Fimg.png">
+  <img align="left" width="44%" height="500" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fb5GrRF%2FbtqCu0b7KzD%2FOTDk4pxtoCuPdVrcixE0Pk%2Fimg.png">
   <b style="text-align:center;">회원가입</b>
   회원 가입을 위해 저장될 값들을 받아오고, 추가적인 기능으로 아이디 중복확인, 비밀번호를 비롯한 모든 내용에 정규화, 이메일 인증, 잘못 기입하거나 기입하지 않은 내용이 있을 경우 '가입하기'버튼이 눌리지 않는 내용에 대한 
 </div>  
