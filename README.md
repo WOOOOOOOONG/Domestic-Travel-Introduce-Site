@@ -20,10 +20,14 @@ Tomcat 8.5, JSP/Servlet
 * 숙박업체 list
 * 숙박 결제 시스템
 * 게시판
-* 관리자 페이지
+* 관리자 및 문의 페이지
 
 ## DB 설계
 <div>
   <img width="100%" height="500" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbQnR5q%2FbtqCrjXQPco%2F6iZf2FnONwKlVn3UTNHwiK%2Fimg.png">  
 </div>
 
+## 담당 역할
+* 계정 관련 기능
+* 마이페이지 및 일정 관리
+* 문의 페이지
