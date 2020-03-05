@@ -62,10 +62,10 @@ Tomcat 8.5, JSP/Servlet
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLoJhk%2FbtqCrlnZEbc%2Fzs1ro7iU51NRYGDl4wN4l1%2Fimg.png">
   <b style="text-align:center;">MyPage</b>
 </div>  
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
 
 <div>
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fu0Yhy%2FbtqCync4HXa%2FnvMVV3hzK70BpR7u2nNpcK%2Fimg.png">
   <b style="text-align:center;">MyPage</b>
 </div>  
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
