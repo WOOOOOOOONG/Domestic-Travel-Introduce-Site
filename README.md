@@ -30,9 +30,5 @@ Tomcat 8.5, JSP/Servlet
 ## 담당 역할
 <div>
   <img width="44%" height="500" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbFHlcF%2FbtqCtW1Zm81%2FDpvKWicogmT9j3yNT7hbbk%2Fimg.png">
-  <h2 style="text-align='center';" !important>로그인</h2>
-</div>  
-* 마이페이지 및 일정 관리  
-<div>
-  <img width="100%" height="500" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2F2V4mu%2FbtqCvx8zQtk%2FgkC898T7MyHCepJd00CnT0%2Fimg.png">  
+  <p style="text-align='center';" !important>로그인</p>
 </div>  
