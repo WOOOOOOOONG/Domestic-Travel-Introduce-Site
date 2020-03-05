@@ -30,5 +30,5 @@ Tomcat 8.5, JSP/Servlet
 ## 담당 역할
 <div>
   <img width="44%" height="500" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbFHlcF%2FbtqCtW1Zm81%2FDpvKWicogmT9j3yNT7hbbk%2Fimg.png" style="float:left;">
-  <b style="text-align:'center'">제목</b>
+  <b style="text-align='center'">제목</b>
 </div>  
