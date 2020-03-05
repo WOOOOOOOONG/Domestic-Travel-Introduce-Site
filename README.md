@@ -8,7 +8,7 @@ Java
 * DB  
 Oracle 11g
 * Web  
-HTML5, CSS6, Javascript, Jquery
+HTML5, CSS6, Javascript, jQuery
 * Server  
 Tomcat 8.5, JSP/Servlet
 
