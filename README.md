@@ -82,7 +82,7 @@ Tomcat 8.5, JSP/Servlet
   ㆍ Google Calendar API 사용<br><br>
   ㆍ DB와 연동 후 저장된 값을 사용자에게 보여지도록 구현
 </div>  
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <div>
   <img align="left" width="450" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fu0Yhy%2FbtqCync4HXa%2FnvMVV3hzK70BpR7u2nNpcK%2Fimg.png">
