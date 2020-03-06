@@ -28,6 +28,7 @@ Tomcat 8.5, JSP/Servlet
 </div>
 
 ## 담당 역할
+> JSP/Servlet, DB 등 해당 내용에 관한 모든 처리
 <span>
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fb5GrRF%2FbtqCu0b7KzD%2FOTDk4pxtoCuPdVrcixE0Pk%2Fimg.png">
   <b>회원가입</b><br>
@@ -62,21 +63,24 @@ Tomcat 8.5, JSP/Servlet
   회원별 프로필 사진과 별명을 화면에 보여주고, 클릭을 통한 프로필 사진 교체 기능  <br>
   로그아웃/회원정보 수정/내가 쓴 게시글 확인 등 홈페이지 내 사용자의 활동 내역 확인  <br><br>
   -중앙<br>
-  Google의 FullCalendar를 사용하여 일정을 나타내고, DB와 연동하여 저장된 여행 계획을 불러와 사용자에게 보여준다.  
+  Google의 FullCalendar를 사용<br>
+  DB와 연동하여 저장된 여행 계획을 사용자에게 보여준다.  
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
 
 <div>
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FcFIQH1%2FbtqCrO4n79P%2FVvIqff32jxkjcLC2yYiJQk%2Fimg.png">
   <b style="text-align:center;">여행지 & 축제 불러오기</b><br>
-  홈페이지에서 제공하는 여행지 및 축제를 보여주고, <b>'드래그'를 통해 간단하게 여행 일정을 추가</b>하는 기능
+  홈페이지에서 제공하는 여행지 및 축제 보여주기 기능<br>
+  <b>'드래그'를 통해 간단하게 여행 일정을 추가</b>하는 기능
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
 
 <div>
   <img align="right" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLoJhk%2FbtqCrlnZEbc%2Fzs1ro7iU51NRYGDl4wN4l1%2Fimg.png">
   <b style="text-align:center;">요일별 일정 List</b><br>
-  Google Calendar API와 DB를 연동 후 저장된 값을 사용자에게 보여지도록 구현
+  Google Calendar API 사용
+  DB와 연동 후 저장된 값을 사용자에게 보여지도록 구현
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
 
@@ -84,6 +88,6 @@ Tomcat 8.5, JSP/Servlet
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fu0Yhy%2FbtqCync4HXa%2FnvMVV3hzK70BpR7u2nNpcK%2Fimg.png">
   <b style="text-align:center;">일정 추가</b><br>
   여행에 필요한 정보를 입력받아 DB에 추가 기능<br>
-  추가 이후 Google Calendar와 연동
+  Ajax를 통해 Calendar에 값 추가
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
