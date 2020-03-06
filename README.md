@@ -66,7 +66,7 @@ Tomcat 8.5, JSP/Servlet
   ㆍ Google의 FullCalendar를 사용<br><br>
   ㆍ DB와 연동하여 저장된 여행 계획을 사용자에게 보여준다.  
 </div>  
-<br><br><br><br><br><br><br>
+<br><br><br>
 
 <div>
   <img align="left" width="450" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FcFIQH1%2FbtqCrO4n79P%2FVvIqff32jxkjcLC2yYiJQk%2Fimg.png">
@@ -90,4 +90,4 @@ Tomcat 8.5, JSP/Servlet
   ㆍ 여행에 필요한 정보를 입력받아 DB에 추가 기능<br><br>
   ㆍ Ajax를 통해 Calendar에 값 추가
 </div>  
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
