@@ -83,7 +83,7 @@ Tomcat 8.5, JSP/Servlet
 <div>
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fu0Yhy%2FbtqCync4HXa%2FnvMVV3hzK70BpR7u2nNpcK%2Fimg.png">
   <b style="text-align:center;">일정 추가</b><br>
-  여행에 필요한 정보를 입력받아 DB에 추가 기능
-  추가 이후 Google Calendar와 연동 
+  여행에 필요한 정보를 입력받아 DB에 추가 기능<br>
+  추가 이후 Google Calendar와 연동
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
