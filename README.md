@@ -52,9 +52,11 @@ Tomcat 8.5, JSP/Servlet
 <div>
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fbrmqut%2FbtqCynKSAjH%2Ft2iGwi8Mt983LLiZK8eXjK%2Fimg.png">
   <b>MyPage</b><br>
-  좌측 : 회원별 프로필 사진과 별명을 화면에 보여주고, 클릭을 통한 프로필 사진 교체 기능  <br>
-         로그아웃/회원정보 수정/내가 쓴 게시글 확인 등 홈페이지 내 사용자의 활동 내역 확인  <br>
-  중앙 : Google의 FullCalendar를 사용하여 일정을 나타내고, DB와 연동하여 저장된 여행 계획을 불러와 사용자에게 보여준다.  
+  -좌측<br>
+  회원별 프로필 사진과 별명을 화면에 보여주고, 클릭을 통한 프로필 사진 교체 기능  <br>
+  로그아웃/회원정보 수정/내가 쓴 게시글 확인 등 홈페이지 내 사용자의 활동 내역 확인  <br>
+  -중앙<br>
+  Google의 FullCalendar를 사용하여 일정을 나타내고, DB와 연동하여 저장된 여행 계획을 불러와 사용자에게 보여준다.  
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
 
