@@ -30,7 +30,7 @@ Tomcat 8.5, JSP/Servlet
 ## 담당 역할
 > JSP/Servlet, DB 등 해당 내용에 관한 모든 처리
 <span>
-  <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fb5GrRF%2FbtqCu0b7KzD%2FOTDk4pxtoCuPdVrcixE0Pk%2Fimg.png">
+  <img align="left" width="450" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fb5GrRF%2FbtqCu0b7KzD%2FOTDk4pxtoCuPdVrcixE0Pk%2Fimg.png">
   <b>회원가입</b><br>
   회원 가입을 위한 정보에 대한 처리<br>
   아이디 중복확인 기능<br>
@@ -41,14 +41,14 @@ Tomcat 8.5, JSP/Servlet
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
 
 <div>
-  <img align="right" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLm7TV%2FbtqCsHqu4NN%2FKgAUkXsLSvXHwa2GqoOaI1%2Fimg.png">
+  <img align="right" width="450" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLm7TV%2FbtqCsHqu4NN%2FKgAUkXsLSvXHwa2GqoOaI1%2Fimg.png">
   <b>ID/PWD 찾기</b><br>
   요구사항과 DB에 저장되어있는 정보가 일치한다면 ID 또는 Password 출력
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
   
 <div>
-  <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbFHlcF%2FbtqCtW1Zm81%2FDpvKWicogmT9j3yNT7hbbk%2Fimg.png">
+  <img align="left" width="450" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbFHlcF%2FbtqCtW1Zm81%2FDpvKWicogmT9j3yNT7hbbk%2Fimg.png">
   <b style="text-align:center;">Login</b><br>
   ID/PWD 정보가 일치한다면 로그인<br>
   비밀번호 실패에 대한 처리<br>
@@ -57,7 +57,7 @@ Tomcat 8.5, JSP/Servlet
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
   
 <div>
-  <img align="right" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fbrmqut%2FbtqCynKSAjH%2Ft2iGwi8Mt983LLiZK8eXjK%2Fimg.png">
+  <img align="right" width="450" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fbrmqut%2FbtqCynKSAjH%2Ft2iGwi8Mt983LLiZK8eXjK%2Fimg.png">
   <b>MyPage</b><br>
   -좌측<br>
   회원별 프로필 사진과 별명을 화면에 보여주고, 클릭을 통한 프로필 사진 교체 기능  <br>
@@ -69,7 +69,7 @@ Tomcat 8.5, JSP/Servlet
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
 
 <div>
-  <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FcFIQH1%2FbtqCrO4n79P%2FVvIqff32jxkjcLC2yYiJQk%2Fimg.png">
+  <img align="left" width="450" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FcFIQH1%2FbtqCrO4n79P%2FVvIqff32jxkjcLC2yYiJQk%2Fimg.png">
   <b style="text-align:center;">여행지 & 축제 불러오기</b><br>
   홈페이지에서 제공하는 여행지 및 축제 보여주기 기능<br>
   <b>'드래그'를 통해 간단하게 여행 일정을 추가</b>하는 기능
@@ -77,7 +77,7 @@ Tomcat 8.5, JSP/Servlet
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
 
 <div>
-  <img align="right" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLoJhk%2FbtqCrlnZEbc%2Fzs1ro7iU51NRYGDl4wN4l1%2Fimg.png">
+  <img align="right" width="450" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLoJhk%2FbtqCrlnZEbc%2Fzs1ro7iU51NRYGDl4wN4l1%2Fimg.png">
   <b style="text-align:center;">요일별 일정 List</b><br>
   Google Calendar API 사용
   DB와 연동 후 저장된 값을 사용자에게 보여지도록 구현
@@ -85,7 +85,7 @@ Tomcat 8.5, JSP/Servlet
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
 
 <div>
-  <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fu0Yhy%2FbtqCync4HXa%2FnvMVV3hzK70BpR7u2nNpcK%2Fimg.png">
+  <img align="left" width="450" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fu0Yhy%2FbtqCync4HXa%2FnvMVV3hzK70BpR7u2nNpcK%2Fimg.png">
   <b style="text-align:center;">일정 추가</b><br>
   여행에 필요한 정보를 입력받아 DB에 추가 기능<br>
   Ajax를 통해 Calendar에 값 추가
