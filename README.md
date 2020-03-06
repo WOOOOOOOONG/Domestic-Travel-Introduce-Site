@@ -54,7 +54,7 @@ Tomcat 8.5, JSP/Servlet
   ㆍ 비밀번호 실패에 대한 처리<br><br>
   ㆍ 로그인 후 메인 페이지로 이동 후 로그인 확인에 대한 처리
 </div>  
-<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
   
 <div>
   <img align="right" width="450" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fbrmqut%2FbtqCynKSAjH%2Ft2iGwi8Mt983LLiZK8eXjK%2Fimg.png">
@@ -74,7 +74,7 @@ Tomcat 8.5, JSP/Servlet
   ㆍ 홈페이지에서 제공하는 여행지 및 축제 보여주기 기능<br><br>
   ㆍ <b>'드래그'를 통해 간단하게 여행 일정을 추가</b>하는 기능
 </div>  
-<br><br><br><br><br><br><br><br><br><br><br><br>  
+<br><br><br><br><br><br><br><br><br><br><br><br><br>  
 
 <div>
   <img align="right" width="450" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLoJhk%2FbtqCrlnZEbc%2Fzs1ro7iU51NRYGDl4wN4l1%2Fimg.png">
@@ -82,7 +82,7 @@ Tomcat 8.5, JSP/Servlet
   ㆍ Google Calendar API 사용<br><br>
   ㆍ DB와 연동 후 저장된 값을 사용자에게 보여지도록 구현
 </div>  
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <div>
   <img align="left" width="450" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fu0Yhy%2FbtqCync4HXa%2FnvMVV3hzK70BpR7u2nNpcK%2Fimg.png">
