@@ -31,21 +31,27 @@ Tomcat 8.5, JSP/Servlet
 <span>
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fb5GrRF%2FbtqCu0b7KzD%2FOTDk4pxtoCuPdVrcixE0Pk%2Fimg.png">
   <b>회원가입</b><br>
-  회원 가입을 위해 저장될 값들을 받아오고, 추가적인 기능으로 아이디 중복확인, 비밀번호를 비롯한 모든 내용에 정규화, 이메일 인증, 잘못 기입하거나 기입하지 않은 내용이 있을 경우 '가입하기'버튼이 눌리지 않는 내용에 대한 처리
+  회원 가입을 위한 정보에 대한 처리<br>
+  아이디 중복확인 기능<br>
+  비밀번호를 비롯한 모든 내용에 정규화<br>
+  이메일 인증<br>
+  잘못 기입하거나 기입하지 않은 내용이 있을 경우 '가입하기' 버튼 비활성화
 </span>            
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
 
 <div>
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLm7TV%2FbtqCsHqu4NN%2FKgAUkXsLSvXHwa2GqoOaI1%2Fimg.png">
   <b>ID/PWD 찾기</b><br>
-  ID 또는 Password를 잊은 사용자를 위한 ID/PWD 찾기 페이지로, DB에 저장되어 있는 사용자의 정보와 일치한다면 계정에 대한 정보를 알려주도록 구현.  
+  요구사항과 DB에 저장되어있는 정보가 일치한다면 ID 또는 Password 출력
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
   
 <div>
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbFHlcF%2FbtqCtW1Zm81%2FDpvKWicogmT9j3yNT7hbbk%2Fimg.png">
   <b style="text-align:center;">Login</b><br>
-  기입된 사용자의 ID 및 Password가 DB에 저장되어 있는 회원 정보와 일치한다면, 로그인이 정상적으로 처리되고 메인 페이지로 이동하도록 구현  
+  ID/PWD 정보가 일치한다면 로그인<br>
+  비밀번호 실패에 대한 처리<br>
+  로그인 후 메인 페이지로 이동 후 로그인 확인에 대한 처리
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
   
@@ -54,7 +60,7 @@ Tomcat 8.5, JSP/Servlet
   <b>MyPage</b><br>
   -좌측<br>
   회원별 프로필 사진과 별명을 화면에 보여주고, 클릭을 통한 프로필 사진 교체 기능  <br>
-  로그아웃/회원정보 수정/내가 쓴 게시글 확인 등 홈페이지 내 사용자의 활동 내역 확인  <br>
+  로그아웃/회원정보 수정/내가 쓴 게시글 확인 등 홈페이지 내 사용자의 활동 내역 확인  <br><br>
   -중앙<br>
   Google의 FullCalendar를 사용하여 일정을 나타내고, DB와 연동하여 저장된 여행 계획을 불러와 사용자에게 보여준다.  
 </div>  
@@ -63,20 +69,21 @@ Tomcat 8.5, JSP/Servlet
 <div>
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FcFIQH1%2FbtqCrO4n79P%2FVvIqff32jxkjcLC2yYiJQk%2Fimg.png">
   <b style="text-align:center;">여행지 & 축제 불러오기</b><br>
-  홈페이지에서 제공하는 여행지 및 축제를 보여주고, <b>'드래그'를 통해 간단하게 여행 일정을 추가</b>할 수 있다.
+  홈페이지에서 제공하는 여행지 및 축제를 보여주고, <b>'드래그'를 통해 간단하게 여행 일정을 추가</b>하는 기능
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
 
 <div>
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLoJhk%2FbtqCrlnZEbc%2Fzs1ro7iU51NRYGDl4wN4l1%2Fimg.png">
   <b style="text-align:center;">요일별 일정 List</b><br>
-  Google Calendar API와 DB를 연동해 값을 추가한 후 사용자에게 보여지도록 구현
+  Google Calendar API와 DB를 연동 후 저장된 값을 사용자에게 보여지도록 구현
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
 
 <div>
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fu0Yhy%2FbtqCync4HXa%2FnvMVV3hzK70BpR7u2nNpcK%2Fimg.png">
   <b style="text-align:center;">일정 추가</b><br>
-  여행에 필요한 날짜와 시간, 사진, 주제 등을 입력받아 간단하게 여행 일정 및 계획을 추가할 수 있다.
+  여행에 필요한 정보를 입력받아 DB에 추가 기능
+  추가 이후 Google Calendar와 연동 
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
