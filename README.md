@@ -40,7 +40,7 @@ Tomcat 8.5, JSP/Servlet
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
 
 <div>
-  <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLm7TV%2FbtqCsHqu4NN%2FKgAUkXsLSvXHwa2GqoOaI1%2Fimg.png">
+  <img align="right" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLm7TV%2FbtqCsHqu4NN%2FKgAUkXsLSvXHwa2GqoOaI1%2Fimg.png">
   <b>ID/PWD 찾기</b><br>
   요구사항과 DB에 저장되어있는 정보가 일치한다면 ID 또는 Password 출력
 </div>  
