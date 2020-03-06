@@ -31,7 +31,7 @@ Tomcat 8.5, JSP/Servlet
 > JSP/Servlet, DB 등 해당 내용에 관한 모든 처리
 <span>
   <img align="left" width="450" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fb5GrRF%2FbtqCu0b7KzD%2FOTDk4pxtoCuPdVrcixE0Pk%2Fimg.png">
-  <b>회원가입</b><br>
+  <b>회원가입</b><br><
   ㆍ 회원 가입을 위한 정보에 대한 처리<br>
   ㆍ 아이디 중복확인 기능<br>
   ㆍ 비밀번호를 비롯한 모든 내용에 정규화<br>
