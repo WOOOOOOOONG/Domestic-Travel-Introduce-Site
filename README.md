@@ -61,13 +61,22 @@ Tomcat 8.5, JSP/Servlet
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
 
 <div>
+  <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FcFIQH1%2FbtqCrO4n79P%2FVvIqff32jxkjcLC2yYiJQk%2Fimg.png">
+  <b style="text-align:center;">여행지 & 축제 불러오기</b><br>
+  홈페이지에서 제공하는 여행지 및 축제를 보여주고, <b>'드래그'를 통해 간단하게 여행 일정을 추가<b>할 수 있다.
+</div>  
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
+
+<div>
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLoJhk%2FbtqCrlnZEbc%2Fzs1ro7iU51NRYGDl4wN4l1%2Fimg.png">
-  <b style="text-align:center;">MyPage</b><br>
+  <b style="text-align:center;">요일별 일정 List</b><br>
+  Google Calendar API와 DB를 연동해 값을 추가한 후 사용자에게 보여지도록 구현
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
 
 <div>
   <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fu0Yhy%2FbtqCync4HXa%2FnvMVV3hzK70BpR7u2nNpcK%2Fimg.png">
-  <b style="text-align:center;">MyPage</b><br>
+  <b style="text-align:center;">일정 추가</b><br>
+  여행에 필요한 날짜와 시간, 사진, 주제 등을 입력받아 간단하게 여행 일정 및 계획을 추가할 수 있다.
 </div>  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
