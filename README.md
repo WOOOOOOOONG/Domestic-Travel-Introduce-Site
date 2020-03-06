@@ -56,7 +56,7 @@ Tomcat 8.5, JSP/Servlet
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
   
 <div>
-  <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fbrmqut%2FbtqCynKSAjH%2Ft2iGwi8Mt983LLiZK8eXjK%2Fimg.png">
+  <img align="right" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fbrmqut%2FbtqCynKSAjH%2Ft2iGwi8Mt983LLiZK8eXjK%2Fimg.png">
   <b>MyPage</b><br>
   -좌측<br>
   회원별 프로필 사진과 별명을 화면에 보여주고, 클릭을 통한 프로필 사진 교체 기능  <br>
@@ -74,7 +74,7 @@ Tomcat 8.5, JSP/Servlet
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
 
 <div>
-  <img align="left" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLoJhk%2FbtqCrlnZEbc%2Fzs1ro7iU51NRYGDl4wN4l1%2Fimg.png">
+  <img align="right" width="410" height="400" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FLoJhk%2FbtqCrlnZEbc%2Fzs1ro7iU51NRYGDl4wN4l1%2Fimg.png">
   <b style="text-align:center;">요일별 일정 List</b><br>
   Google Calendar API와 DB를 연동 후 저장된 값을 사용자에게 보여지도록 구현
 </div>  
