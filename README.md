@@ -17,9 +17,9 @@ Tomcat 8.5, JSP/Servlet
 <img align="left" width="300" height="300" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fb5GrRF%2FbtqCu0b7KzD%2FOTDk4pxtoCuPdVrcixE0Pk%2Fimg.png">
 <img align="left" width="300" height="300" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fbrmqut%2FbtqCynKSAjH%2Ft2iGwi8Mt983LLiZK8eXjK%2Fimg.png">
 <img align="" width="300" height="300" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FcFIQH1%2FbtqCrO4n79P%2FVvIqff32jxkjcLC2yYiJQk%2Fimg.png">
-<br><br>
-* 회원가입/로그인, 마이페이지, 일정관리, 게시판, 관리자 및 문의 페이지 Full Stack 구현
-* BOARD, MEMBER, REPLY, QA(질문), MYPLAN DB 설계
+<br>
+** 회원가입/로그인, 마이페이지, 일정관리, 게시판, 관리자 및 문의 페이지 Full Stack 구현
+** BOARD, MEMBER, REPLY, QA(질문), MYPLAN DB 설계
 
 ## DB 설계
 <div>
